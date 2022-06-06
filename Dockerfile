@@ -23,6 +23,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY ./src /var/www/booknet
 
-CMD composer install ; php artisan migrate:fresh --seed ;  php-fpm
+CMD composer install ; yes | php artisan migrate:fresh --seed ;  php-fpm
 
 EXPOSE 9000
